@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visaway Consultant Group | Bathinda</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyDark: '#0B1320',
+                        navyCard: '#131F33',
+                        navyBorder: '#1E2D4A',
+                        crimsonRed: '#DC2626',
+                        crimsonHover: '#B91C1C',
+                        accentOrange: '#F97316',
+                        lightBg: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float-slow': 'float 5s ease-in-out infinite',
+                        'float-fast': 'float 2.5s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'flag-wave': 'flagWave 2s ease-in-out infinite',
+                        'flag-bounce': 'flagBounce 3s ease-in-out infinite',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite linear',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'single-plane-fly': 'flyPlane 8s ease-in-out infinite',
+                        'cross-page-plane': 'crossPageFly 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(2deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.08)' },
+                        },
+                        flagWave: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg) scale(1)' },
+                            '25%': { transform: 'translateY(-8px) rotate(-6deg) scale(1.06)' },
+                            '75%': { transform: 'translateY(6px) rotate(6deg) scale(0.95)' }
+                        },
+                        flagBounce: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-12px) scale(1.05)' }
+                        },
+                        glowPulse: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 6px rgba(220, 38, 38, 0.4))' },
+                            '50%': { filter: 'drop-shadow(0 0 20px rgba(220, 38, 38, 0.9))' }
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        },
+                        flyPlane: {
+                            '0%': { left: '70%', top: '46%', transform: 'translate(-50%, -50%) rotate(-45deg)' },
+                            '50%': { left: '46%', top: '25%', transform: 'translate(-50%, -50%) rotate(-75deg)' },
+                            '100%': { left: '23%', top: '32%', transform: 'translate(-50%, -50%) rotate(-100deg)' }
+                        },
+                        crossPageFly: {
+                            '0%': { top: '-5%', left: '-5%', transform: 'rotate(45deg)' },
+                            '25%': { top: '25%', left: '30%', transform: 'rotate(60deg)' },
+                            '50%': { top: '50%', left: '80%', transform: 'rotate(120deg)' },
+                            '75%': { top: '80%', left: '20%', transform: 'rotate(220deg)' },
+                            '100%': { top: '105%', left: '-10%', transform: 'rotate(240deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.active, .reveal-right.active, .reveal-up.active {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        .interactive-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .interactive-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 30px -10px rgba(220, 38, 38, 0.25);
+        }
+
+        .flag-card:hover .flag-img {
+            animation: flagWave 1.2s ease-in-out infinite !important;
+        }
+        .flag-card:nth-child(1) .flag-img { animation: flagBounce 3s ease-in-out infinite 0s; }
+        .flag-card:nth-child(2) .flag-img { animation: flagBounce 3s ease-in-out infinite 0.6s; }
+        .flag-card:nth-child(3) .flag-img { animation: flagBounce 3s ease-in-out infinite 1.2s; }
+        .flag-card:nth-child(4) .flag-img { animation: flagBounce 3s ease-in-out infinite 1.8s; }
+        .flag-card:nth-child(5) .flag-img { animation: flagBounce 3s ease-in-out infinite 2.4s; }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #ffffff 0%, #dc2626 50%, #ffffff 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            animation: shimmer 3s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-navyDark text-slate-800 font-sans antialiased selection:bg-crimsonRed selection:text-white relative overflow-x-hidden">
+
+    <!-- GLOBAL ANIMATED AEROPLANE FLYING ACROSS WEBSITE -->
+    <div class="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+        <div class="absolute animate-cross-page-plane drop-shadow-[0_10px_10px_rgba(220,38,38,0.5)]">
+            <i class="fa-solid fa-plane text-crimsonRed text-2xl sm:text-3xl"></i>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON POPUP -->
+    <div class="fixed bottom-6 right-6 z-40 flex items-center group">
+        <a href="https://wa.me/916280655183" target="_blank" rel="noopener noreferrer" 
+           class="relative bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 animate-float-fast">
+            <span class="absolute -inset-1 rounded-full bg-emerald-500/40 animate-ping"></span>
+            <i class="fa-brands fa-whatsapp text-3xl z-10"></i>
+        </a>
+        <div class="absolute right-16 bg-navyDark text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none border border-slate-700">
+            Chat on WhatsApp
+        </div>
+    </div>
+
+    <!-- FLOATING NAVBAR -->
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 z-30 max-w-6xl mx-auto w-full px-4">
+        <div class="bg-navyDark/90 backdrop-blur-md border border-white/15 rounded-full px-5 py-2.5 flex items-center justify-between shadow-2xl">
+            
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <div class="relative w-11 h-11 flex items-center justify-center bg-white rounded-full shadow-lg p-1.5 group-hover:rotate-6 transition-transform duration-300 border-2 border-crimsonRed">
+                    <img src="logo visaway.png" alt="Visaway Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="text-left leading-tight">
+                    <span class="block text-sm font-black tracking-tight text-white group-hover:text-crimsonRed transition">VISAWAY</span>
+                    <span class="block text-[8px] font-bold tracking-widest text-slate-300 uppercase -mt-0.5">Consultant</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-5">
+                <nav class="hidden lg:flex items-center gap-4 text-xs font-medium text-slate-300">
+                    <a href="#home" class="hover:text-white transition hover:scale-110 inline-block">Home</a>
+                    <a href="#why-choose-us" class="hover:text-white transition hover:scale-110 inline-block">Why Us</a>
+                    <a href="#ability" class="hover:text-white transition hover:scale-110 inline-block">Ability</a>
+                    <a href="#countries" class="hover:text-white transition hover:scale-110 inline-block">Countries</a>
+                    <a href="#services" class="hover:text-white transition hover:scale-110 inline-block">Services</a>
+                    <a href="#testimonials" class="text-slate-300 hover:text-white transition hover:scale-110 inline-block">Testimonial</a>
+                    <a href="#about" class="hover:text-white transition hover:scale-110 inline-block">About</a>
+                    <a href="#contact" class="hover:text-white transition hover:scale-110 inline-block">Contact</a>
+                </nav>
+
+                <a href="#contact" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-crimsonRed/50 hover:scale-105 active:scale-95 flex items-center gap-1.5 animate-pulse">
+                    <i class="fa-solid fa-plane-up text-[10px]"></i> Get Started
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ==================== SINGLE PAGE LAYOUT ==================== -->
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex flex-col justify-between bg-navyDark text-white bg-[url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1920')] bg-cover bg-center overflow-hidden pt-28">
+        <div class="absolute inset-0 bg-gradient-to-b from-navyDark/90 via-navyDark/85 to-navyDark"></div>
+
+        <div class="absolute top-1/4 left-10 w-80 h-80 bg-crimsonRed/20 rounded-full blur-3xl animate-pulse-glow pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse-glow pointer-events-none"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 flex flex-col justify-center items-start my-auto space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimsonRed/20 border border-crimsonRed/30 text-crimsonRed text-xs font-bold uppercase tracking-widest animate-bounce">
+                <i class="fa-solid fa-plane text-xs"></i> Global Visa Guidance
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight uppercase">
+                <span class="shimmer-text">VISAWAY</span> CONSULTANT<br>GROUP
+            </h1>
+
+            <p class="text-slate-300 max-w-md text-xs sm:text-sm leading-relaxed">
+                Dedicated documentation and filing guidance for Study, Visitor, and Tourist Visas based in Bathinda, Punjab.
+            </p>
+
+            <div class="pt-2 flex items-center gap-4">
+                <a href="#about" class="inline-block bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-7 py-3 rounded-full shadow-xl hover:shadow-crimsonRed/50 transition-all duration-300 hover:scale-110">
+                    About Us
+                </a>
+                <a href="#countries" class="inline-block bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold uppercase tracking-wider px-7 py-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110">
+                    Explore Destinations
+                </a>
+            </div>
+        </div>
+
+        <div class="relative z-10 flex justify-center pb-6">
+            <a href="#why-choose-us" class="text-slate-400 hover:text-crimsonRed text-2xl animate-bounce transition"><i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-choose-us" class="py-20 bg-white text-navyDark relative overflow-hidden reveal-up">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-crimsonRed animate-pulse">UNMATCHED EXCELLENCE</span>
+                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-navyDark">Why Choose Visaway?</h2>
+                <p class="text-slate-500 text-xs">Custom legal SOP drafting, strict financial verification, and end-to-end transparency.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="interactive-card bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-crimsonRed group">
+                    <div class="w-12 h-12 rounded-xl bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-125 group-hover:bg-crimsonRed group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-file-signature animate-float-fast"></i>
+                    </div>
+                    <h3 class="text-sm font-extrabold text-navyDark uppercase">Tailored SOPs</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Custom statement of purpose aligned to your background.</p>
+                </div>
+
+                <div class="interactive-card bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-crimsonRed group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-125 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-eye animate-float-fast"></i>
+                    </div>
+                    <h3 class="text-sm font-extrabold text-navyDark uppercase">100% Transparent</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Zero hidden filing charges with clear step-by-step guidance.</p>
+                </div>
+
+                <div class="interactive-card bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-crimsonRed group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-125 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-user-check animate-float-fast"></i>
+                    </div>
+                    <h3 class="text-sm font-extrabold text-navyDark uppercase">Profile Check</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Realistic assessment prior to filing to prevent refusals.</p>
+                </div>
+
+                <div class="interactive-card bg-slate-50 border border-slate-200 p-6 rounded-2xl hover:border-crimsonRed group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-125 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-bolt animate-float-fast"></i>
+                    </div>
+                    <h3 class="text-sm font-extrabold text-navyDark uppercase">Fast Track</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Streamlined documentation pipeline for rapid submission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABILITY SECTION -->
+    <section id="ability" class="py-20 bg-navyDark text-white border-t border-navyBorder relative reveal-left overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-crimsonRed/10 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimsonRed/20 text-crimsonRed text-[10px] font-extrabold uppercase tracking-widest border border-crimsonRed/30">
+                    <i class="fa-solid fa-sliders"></i> Tailored Profile Guidance
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-black leading-tight uppercase">
+                    According<br>to your <span class="text-crimsonRed shimmer-text inline-block">ability!!</span>
+                </h2>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Every visa application requires financial proofing and document alignment matching your profile. We structure your file according to your personal background for maximum accuracy.
+                </p>
+                
+                <div class="flex items-center gap-4 pt-2">
+                    <a href="#contact" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg shadow-crimsonRed/30">Free Consultation</a>
+                    <a href="https://wa.me/916280655183" target="_blank" class="flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 group">
+                        <i class="fa-brands fa-whatsapp text-xl group-hover:rotate-12 transition-transform duration-300"></i> Direct WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700 group">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" alt="Consultation" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-navyDark/30 group-hover:bg-transparent transition-colors"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- COUNTRIES SECTION -->
+    <section id="countries" class="py-20 bg-slate-50 text-navyDark border-t border-b border-slate-200 relative overflow-hidden reveal-right">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-3 relative z-10">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-crimsonRed animate-pulse">EXPLORE DESTINATIONS</span>
+            <h2 class="text-3xl sm:text-4xl font-black uppercase text-navyDark tracking-tight">Which Country?</h2>
+            <p class="text-slate-500 text-xs max-w-lg mx-auto">Click any destination below to inspect visa paths and interactive criteria.</p>
+
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 pt-8">
+                <!-- Canada -->
+                <button onclick="switchCountry('canada')" id="tab-canada" class="flag-card bg-white border-2 border-crimsonRed p-4 rounded-2xl shadow-xl w-32 text-center transition-all duration-300 relative group">
+                    <div class="w-16 h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="flag-img w-14 h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-xs font-black text-navyDark uppercase mt-3 block tracking-wide">Canada</span>
+                    <span class="text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- UK -->
+                <button onclick="switchCountry('uk')" id="tab-uk" class="flag-card bg-white border border-slate-200 p-4 rounded-2xl shadow-md hover:border-crimsonRed w-32 text-center transition-all duration-300 relative group">
+                    <div class="w-16 h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" class="flag-img w-14 h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-xs font-black text-slate-700 uppercase mt-3 block tracking-wide">UK</span>
+                    <span class="text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- Australia -->
+                <button onclick="switchCountry('australia')" id="tab-australia" class="flag-card bg-white border border-slate-200 p-4 rounded-2xl shadow-md hover:border-crimsonRed w-32 text-center transition-all duration-300 relative group">
+                    <div class="w-16 h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="flag-img w-14 h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-xs font-black text-slate-700 uppercase mt-3 block tracking-wide">Australia</span>
+                    <span class="text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- USA -->
+                <button onclick="switchCountry('usa')" id="tab-usa" class="flag-card bg-white border border-slate-200 p-4 rounded-2xl shadow-md hover:border-crimsonRed w-32 text-center transition-all duration-300 relative group">
+                    <div class="w-16 h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="flag-img w-14 h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-xs font-black text-slate-700 uppercase mt-3 block tracking-wide">USA</span>
+                    <span class="text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- Dubai -->
+                <button onclick="switchCountry('dubai')" id="tab-dubai" class="flag-card bg-white border border-slate-200 p-4 rounded-2xl shadow-md hover:border-crimsonRed w-32 text-center transition-all duration-300 relative group">
+                    <div class="w-16 h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/ae.png" alt="Dubai Flag" class="flag-img w-14 h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-xs font-black text-slate-700 uppercase mt-3 block tracking-wide">Dubai</span>
+                    <span class="text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+            </div>
+
+            <!-- MAIN DISPLAY CARD -->
+            <div id="country-display-card" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 mt-10 shadow-2xl max-w-3xl mx-auto text-left grid md:grid-cols-2 gap-8 items-center transition-all duration-500 relative overflow-hidden">
+                <div class="space-y-4 relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimsonRed/10 text-crimsonRed text-[10px] font-bold uppercase tracking-widest border border-crimsonRed/20">
+                        <i class="fa-solid fa-location-dot"></i> Destination Focus
+                    </div>
+                    <h3 id="country-title" class="text-3xl font-black text-navyDark uppercase tracking-tight">CANADA</h3>
+                    <p id="country-desc" class="text-xs text-slate-600 leading-relaxed">
+                        Top destination for Study Permits and Visitor Visas with high visa success rates for structured financial profiles.
+                    </p>
+                    <div id="country-features" class="grid grid-cols-2 gap-2.5 text-xs font-semibold text-slate-700 pt-1">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> Study & Tourist Permits</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> Transparent Requirements</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> Academic Progression</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> Spouse Visa Support</div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-extrabold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/30 uppercase tracking-wider">
+                            <span>Get Consultation</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center relative z-10">
+                    <div class="w-60 h-60 rounded-3xl bg-slate-900 border border-slate-800 p-6 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-crimsonRed/30 via-transparent to-orange-500/20 animate-spin-slow"></div>
+                        <div class="relative z-10 p-2 bg-white/10 rounded-2xl backdrop-blur-md border border-white/20 animate-glow-pulse">
+                            <img id="country-flag-large" src="https://flagcdn.com/w160/ca.png" alt="Flag Badge" class="w-36 h-24 object-cover rounded-xl shadow-2xl animate-flag-wave">
+                        </div>
+                        <span id="country-badge-text" class="mt-4 text-[10px] font-extrabold text-slate-300 uppercase tracking-widest relative z-10 bg-slate-800/90 px-3 py-1 rounded-full border border-slate-700">Official Partner Matrix</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-navyDark text-white reveal-up">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-crimsonRed animate-pulse">OUR SERVICES</span>
+                <h2 class="text-3xl font-extrabold uppercase tracking-tight">Select The Visa Category You Need</h2>
+                <p class="text-slate-400 text-xs">Specializing strictly in study and non-immigrant visitor categories.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="interactive-card bg-navyCard border border-navyBorder rounded-2xl p-6 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600" alt="Study Visa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute bottom-2 left-2 bg-navyDark/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Study Permit</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Study Visa Guidance</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Admissions assistance, SOP preparation, academic mapping, and visa file filing.</p>
+                    </div>
+                    <a href="#contact" class="mt-6 block text-center bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40">Apply For Guidance</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="interactive-card bg-navyCard border border-navyBorder rounded-2xl p-6 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=600" alt="Visitor Visa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute bottom-2 left-2 bg-navyDark/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Visitor Visa</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Visitor & Family Visa</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Assistance with family invitation letters, home ties documentation, and financial files.</p>
+                    </div>
+                    <a href="#contact" class="mt-6 block text-center bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40">Apply For Guidance</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="interactive-card bg-navyCard border border-navyBorder rounded-2xl p-6 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="h-48 rounded-xl overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=600" alt="Tourist Visa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute bottom-2 left-2 bg-navyDark/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Tourist Visa</span>
+                        </div>
+                        <h3 class="text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Tourist Visa Services</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Itinerary planning, travel hotel booking proofs, cover notes, and appointment support.</p>
+                    </div>
+                    <a href="#contact" class="mt-6 block text-center bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40">Apply For Guidance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EXPANDED TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 bg-slate-50 text-navyDark border-t border-b border-slate-200 reveal-up">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <span class="text-xs font-bold uppercase tracking-widest text-crimsonRed animate-pulse">CLIENT REVIEWS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-navyDark">Client Testimonials & Success Stories</h2>
+                <p class="text-slate-600 text-xs">Read feedback from students and travelers who achieved their visa goals with Visaway.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-crimsonRed/10 text-crimsonRed px-2 py-0.5 rounded-full uppercase">Canada Study</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"Visaway helped me get my Canada study visa approved smoothly. Their SOP writing guidance made all the difference."</p>
+                    <p class="text-xs font-bold text-navyDark">— Gurpreet S., Bathinda</p>
+                </div>
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-blue-500/10 text-blue-600 px-2 py-0.5 rounded-full uppercase">UK Visitor</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"Very honest team. They clearly explained visitor visa requirements for UK and helped prepare my parents' documentation."</p>
+                    <p class="text-xs font-bold text-navyDark">— Simran K., Punjab</p>
+                </div>
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-emerald-500/10 text-emerald-600 px-2 py-0.5 rounded-full uppercase">Dubai Tourist</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"Fast service for my Dubai tourist visa. Clear process with zero hidden costs."</p>
+                    <p class="text-xs font-bold text-navyDark">— Amanpreet M., Bathinda</p>
+                </div>
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-amber-500/10 text-amber-600 px-2 py-0.5 rounded-full uppercase">Australia 500</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"The financial file structuring was handled impeccably. Their team knows exactly what visa officers look for."</p>
+                    <p class="text-xs font-bold text-navyDark">— Harpreet S., Patiala</p>
+                </div>
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-purple-500/10 text-purple-600 px-2 py-0.5 rounded-full uppercase">USA F1 Visa</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"Mock interviews conducted by Visaway gave me the exact confidence I needed for my embassy interview."</p>
+                    <p class="text-xs font-bold text-navyDark">— Rohit G., Bathinda</p>
+                </div>
+                <div class="interactive-card bg-white border border-slate-200 p-6 rounded-2xl space-y-4 hover:border-crimsonRed shadow-md">
+                    <div class="flex items-center justify-between">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <span class="text-[9px] font-bold bg-rose-500/10 text-rose-600 px-2 py-0.5 rounded-full uppercase">Canada Visitor</span>
+                    </div>
+                    <p class="text-xs text-slate-600 italic leading-relaxed">"Highly recommended consultancy in Ajit Road. Transparent guidance and very cooperative staff."</p>
+                    <p class="text-xs font-bold text-navyDark">— Jaswinder S., Mansa</p>
+                </div>
+            </div>
+
+            <!-- Submit Review Box -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-lg max-w-xl mx-auto text-left space-y-4">
+                <h3 class="text-base font-black uppercase text-navyDark">Share Your Review</h3>
+                <form onsubmit="handleReviewSubmit(event)" class="space-y-3">
+                    <div>
+                        <input type="text" required placeholder="Your Name & City..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-crimsonRed">
+                    </div>
+                    <div>
+                        <textarea rows="3" required placeholder="Write your testimonial here..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-crimsonRed"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-2.5 rounded-xl uppercase tracking-wider transition-all">Submit Review</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 bg-navyDark text-white relative overflow-hidden reveal-right">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700 group">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1000" alt="Visaway Team" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-navyDark/30"></div>
+                        <div class="absolute bottom-6 left-6 bg-navyDark/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-3 animate-float-slow">
+                            <div class="w-10 h-10 rounded-full bg-crimsonRed text-white flex items-center justify-center font-black text-sm shadow-lg shadow-crimsonRed/40">4.9★</div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Highly Rated Consultancy</p>
+                                <p class="text-[10px] text-slate-400">Based in Bathinda, Punjab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimsonRed/20 border border-crimsonRed/30 text-crimsonRed text-[11px] font-extrabold uppercase tracking-widest">
+                        <i class="fa-solid fa-compass"></i> About Our Firm
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase leading-snug">
+                        Dedicated To Your Global <span class="text-crimsonRed shimmer-text">Aspirations.</span>
+                    </h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Visaway Consultant Group is a premier documentation consultancy based in Bathinda, Punjab. We focus strictly on Study, Visitor, and Tourist Visas, providing genuine guidance tailored to your specific financial and academic profile.
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 bg-navyCard p-3.5 rounded-xl border border-navyBorder shadow-sm hover:border-crimsonRed transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-crimsonRed/20 text-crimsonRed flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                            <span class="text-xs font-bold text-white">Document Verification & SOP Refinement</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-navyCard p-3.5 rounded-xl border border-navyBorder shadow-sm hover:border-crimsonRed transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-crimsonRed/20 text-crimsonRed flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                            <span class="text-xs font-bold text-white">Precision Financial File Structuring</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-navyCard p-3.5 rounded-xl border border-navyBorder shadow-sm hover:border-crimsonRed transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-crimsonRed/20 text-crimsonRed flex items-center justify-center text-xs font-bold"><i class="fa-solid fa-check"></i></div>
+                            <span class="text-xs font-bold text-white">Direct Guidance Without Unrealistic Promises</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-navyDark text-white relative reveal-up">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-crimsonRed animate-pulse">GET IN TOUCH</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight uppercase">JOIN US AND GET THE BEST OFFERS.</h2>
+            
+            <form onsubmit="handleSubmit(event)" class="max-w-md mx-auto flex bg-navyCard p-2 rounded-full shadow-2xl border border-slate-700 focus-within:border-crimsonRed transition-all duration-300">
+                <input type="text" required placeholder="Enter Your Phone or Email..." class="bg-transparent text-xs text-white px-5 py-3 focus:outline-none flex-grow">
+                <button type="submit" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold px-6 py-3 rounded-full uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/40">Submit</button>
+            </form>
+
+            <div class="pt-8 space-y-2 text-xs text-slate-400">
+                <p class="font-extrabold text-white text-base uppercase tracking-wider">Visaway Consultant Services</p>
+                <p>Ajit Road, Near Street No. 19, Bathinda, Punjab</p>
+                <p class="text-crimsonRed font-black text-base pt-1">+91 62806 55183</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== FOOTER WITH MODALS ==================== -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800/80 text-left">
+                
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg p-1.5 border-2 border-crimsonRed">
+                            <img src="logo visaway.png" alt="Visaway Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-base font-black tracking-tight text-white uppercase">VISAWAY <span class="text-crimsonRed">CONSULTANT</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Your trusted documentation partner based in Bathinda, Punjab, specialized in profile evaluation, study permits, and visitor visas.
+                    </p>
+                    <div class="flex items-center gap-3 text-slate-300 text-sm pt-1">
+                        <a href="https://www.instagram.com/visaway.bathinda" target="_blank" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-crimsonRed hover:border-crimsonRed hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/916280655183" target="_blank" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-white font-extrabold uppercase tracking-wider text-xs">Quick Links</p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#why-choose-us" class="hover:text-white transition">Why Choose Us</a></li>
+                        <li><a href="#ability" class="hover:text-white transition">Tailored Ability</a></li>
+                        <li><a href="#countries" class="hover:text-white transition">Destinations</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Visa Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-white font-extrabold uppercase tracking-wider text-xs">Legal & Compliance</p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><button onclick="openModal('privacy')" class="hover:text-white transition flex items-center gap-1.5 text-left"><i class="fa-solid fa-shield-halved text-[10px] text-crimsonRed"></i> Privacy Policy</button></li>
+                        <li><button onclick="openModal('terms')" class="hover:text-white transition flex items-center gap-1.5 text-left"><i class="fa-solid fa-file-contract text-[10px] text-crimsonRed"></i> Terms & Conditions</button></li>
+                        <li><button onclick="openModal('disclaimer')" class="hover:text-white transition flex items-center gap-1.5 text-left"><i class="fa-solid fa-triangle-exclamation text-[10px] text-crimsonRed"></i> Immigration Disclaimer</button></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-white font-extrabold uppercase tracking-wider text-xs">Headquarters</p>
+                    <p class="text-slate-400 leading-relaxed">Ajit Road, Near Street No. 19, Bathinda, Punjab, India</p>
+                    <p class="text-white font-semibold pt-1">Phone: <a href="tel:6280655183" class="text-crimsonRed font-extrabold hover:underline">+91 62806 55183</a></p>
+                </div>
+
+            </div>
+
+            <!-- CENTER-ALIGNED FOOTER BOTTOM CREDITS -->
+            <div class="text-center text-slate-500 text-[11px] pt-4 space-y-1">
+                <p>&copy; 2026 Visaway Consultant Services. All rights reserved.</p>
+                <p class="font-medium text-slate-400">Crafted by Clickormedia</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODAL POPUP CONTAINER -->
+    <div id="policyModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+        <div class="bg-navyCard border border-slate-700 w-full max-w-lg rounded-3xl p-6 sm:p-8 text-white relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="text-lg font-black uppercase text-crimsonRed tracking-wide"></h3>
+            <div id="modalBody" class="text-xs text-slate-300 leading-relaxed space-y-3 max-h-[60vh] overflow-y-auto pr-2 mt-3"></div>
+            <div class="pt-4 text-right">
+                <button onclick="closeModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold px-6 py-2.5 rounded-full uppercase tracking-wider transition-all">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 80;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+
+        const countryData = {
+            canada: {
+                title: "CANADA",
+                desc: "Top destination for Study Permits and Visitor Visas with high visa success rates for structured financial profiles.",
+                flagImg: "https://flagcdn.com/w160/ca.png",
+                badgeText: "Official Partner Matrix",
+                features: ["Study & Tourist Permits", "Transparent Requirements", "Academic Progression", "Spouse Visa Support"]
+            },
+            uk: {
+                title: "UNITED KINGDOM",
+                desc: "Fast-track processing for university study visas and family visitor visas across England, Scotland, and Wales.",
+                flagImg: "https://flagcdn.com/w160/gb.png",
+                badgeText: "UK Visas & Immigration Guideline",
+                features: ["Quick CAS Evaluation", "Family Invitation File", "Tourist Itinerary Prep", "Financial Documentation"]
+            },
+            australia: {
+                title: "AUSTRALIA",
+                desc: "Excellent opportunities for higher education and short-term visitor travel with subclass 500 & 600 guidance.",
+                flagImg: "https://flagcdn.com/w160/au.png",
+                badgeText: "Subclass 500 & 600 Experts",
+                features: ["Subclass 500 Student Visa", "Subclass 600 Visitor", "Financial Matrix Prep", "SOP Customization"]
+            },
+            usa: {
+                title: "UNITED STATES",
+                desc: "Comprehensive interview prep and DS-160 document filing for B1/B2 Visitor and F1 Student Visas.",
+                flagImg: "https://flagcdn.com/w160/us.png",
+                badgeText: "DS-160 & F1/B2 Interview Guidance",
+                features: ["DS-160 Form Filing", "Embassy Interview Prep", "F1 Student Guidance", "B1/B2 Tourist Visa"]
+            },
+            dubai: {
+                title: "DUBAI (UAE)",
+                desc: "Hassle-free 30-day and 60-day tourist visa processing with fast turnaround times.",
+                flagImg: "https://flagcdn.com/w160/ae.png",
+                badgeText: "Express 30 & 60 Day Tourist Processing",
+                features: ["30 & 60 Day Visas", "Express Processing", "Express Voucher Booking", "Minimal Documentation"]
+            }
+        };
+
+        function switchCountry(countryKey) {
+            const data = countryData[countryKey];
+            const showcaseCard = document.getElementById('country-display-card');
+            showcaseCard.classList.add('opacity-40', 'scale-[0.97]');
+
+            setTimeout(() => {
+                document.getElementById('country-title').innerText = data.title;
+                document.getElementById('country-desc').innerText = data.desc;
+                document.getElementById('country-flag-large').src = data.flagImg;
+                document.getElementById('country-badge-text').innerText = data.badgeText;
+
+                const featureContainer = document.getElementById('country-features');
+                featureContainer.innerHTML = data.features.map(f => `<div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> ${f}</div>`).join('');
+
+                showcaseCard.classList.remove('opacity-40', 'scale-[0.97]');
+            }, 200);
+
+            document.querySelectorAll('.flag-card').forEach(tab => {
+                tab.classList.remove('border-2', 'border-crimsonRed');
+                tab.classList.add('border', 'border-slate-200');
+            });
+
+            const activeTab = document.getElementById(`tab-${countryKey}`);
+            activeTab.classList.remove('border-slate-200');
+            activeTab.classList.add('border-2', 'border-crimsonRed');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Visaway Consultant Services will reach out shortly.');
+            e.target.reset();
+        }
+
+        function handleReviewSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for sharing your review! Your testimonial has been successfully submitted.');
+            e.target.reset();
+        }
+
+        const policyContent = {
+            privacy: {
+                title: "Privacy Policy",
+                content: `
+                    <p>At <strong>Visaway Consultant Group</strong> (Bathinda, Punjab), we take your personal and data privacy very seriously.</p>
+                    <p><strong>1. Information Collection:</strong> We collect details such as your academic background, contact info, and financial documents strictly for the purpose of evaluating visa eligibility, drafting SOPs, and filing documentation.</p>
+                    <p><strong>2. Data Security:</strong> All client records are securely stored and handled with high confidentiality. We never sell, rent, or trade your personal information to external commercial entities.</p>
+                    <p><strong>3. Communications:</strong> We use your contact details solely to provide updates regarding your file progression and consultation status.</p>
+                `
+            },
+            terms: {
+                title: "Terms & Conditions",
+                content: `
+                    <p>By engaging with <strong>Visaway Consultant Group</strong>, you agree to the following terms:</p>
+                    <p><strong>1. Accurate Information:</strong> Clients are solely responsible for providing genuine, verifiable academic, professional, and financial documents. Submission of fraudulent records is strictly prohibited.</p>
+                    <p><strong>2. Professional Guidance:</strong> Our fees cover advisory, document review, SOP preparation, and application file structuring. Embassy processing fees, visa fees, and third-party charges are separate.</p>
+                    <p><strong>3. Non-Refundable Policy:</strong> Professional consultation and document preparation charges are non-refundable once work on the applicant's file has commenced.</p>
+                `
+            },
+            disclaimer: {
+                title: "Immigration Disclaimer",
+                content: `
+                    <p><strong>Visaway Consultant Group</strong> is an independent documentation and advisory firm based in Bathinda, Punjab.</p>
+                    <p><strong>1. Not a Government Agency:</strong> We are not affiliated with, endorsed by, or connected to any government body, Department of Immigration, or Embassy.</p>
+                    <p><strong>2. No Approval Guarantees:</strong> We do not guarantee visa approvals or job placements. The final decision to grant or refuse a visa rests exclusively with the respective visa officers, high commissions, or embassies.</p>
+                    <p><strong>3. Advisory Role:</strong> Our services are strictly advisory and operational in assisting with file preparation and formatting.</p>
+                `
+            }
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('policyModal');
+            const titleEl = document.getElementById('modalTitle');
+            const bodyEl = document.getElementById('modalBody');
+
+            titleEl.innerText = policyContent[type].title;
+            bodyEl.innerHTML = policyContent[type].content;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('policyModal');
+            modal.classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('policyModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
