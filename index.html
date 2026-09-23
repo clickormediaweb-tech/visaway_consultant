@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visaway Consultant Group | Bathinda</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -137,7 +135,7 @@
                 Welcome to Visaway Immigration Services.
             </p>
             <div class="pt-2">
-                <button onclick="closeWelcomeModal()" class="w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl uppercase tracking-wider transition-all shadow-lg shadow-crimsonRed/40 hover:scale-105 cursor-pointer">
+                <button type="button" onclick="closeWelcomeModal()" class="w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl uppercase tracking-wider transition-all shadow-lg shadow-crimsonRed/40 hover:scale-105 cursor-pointer">
                     Explore Destinations
                 </button>
             </div>
@@ -147,7 +145,7 @@
     <!-- ONLINE APPOINTMENT BOOKING & APPLICATION MODAL -->
     <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden p-3 sm:p-4 overflow-y-auto">
         <div class="bg-navyCard border border-slate-700 w-full max-w-xl rounded-3xl p-5 sm:p-8 text-white relative shadow-2xl my-6 max-h-[92vh] overflow-y-auto">
-            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center transition cursor-pointer">
+            <button type="button" onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center transition cursor-pointer">
                 <i class="fa-solid fa-xmark text-sm"></i>
             </button>
            
@@ -272,36 +270,36 @@
                 <a href="#ability" class="hover:text-white transition hover:scale-110 inline-block">Ability</a>
                 <a href="#countries" class="hover:text-white transition hover:scale-110 inline-block">Countries</a>
                 <a href="#services" class="hover:text-white transition hover:scale-110 inline-block">Services</a>
-                <button onclick="openBookingModal()" class="hover:text-white transition hover:scale-110 text-slate-300 bg-transparent border-0 cursor-pointer text-xs font-medium">Book & Apply</button>
+                <button type="button" onclick="openBookingModal()" class="hover:text-white transition hover:scale-110 text-slate-300 bg-transparent border-0 cursor-pointer text-xs font-medium">Book & Apply</button>
                 <a href="#testimonials" class="text-slate-300 hover:text-white transition hover:scale-110 inline-block">Testimonial</a>
                 <a href="#about" class="hover:text-white transition hover:scale-110 inline-block">About</a>
                 <a href="#contact" class="hover:text-white transition hover:scale-110 inline-block">Contact</a>
             </div>
 
             <div class="flex items-center gap-2.5">
-                <button onclick="openBookingModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-[11px] sm:text-xs font-bold px-3.5 sm:px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-1.5 animate-pulse cursor-pointer">
+                <button type="button" onclick="openBookingModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-[11px] sm:text-xs font-bold px-3.5 sm:px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-1.5 animate-pulse cursor-pointer">
                     <i class="fa-solid fa-plane-up text-[9px]"></i> Get Started
                 </button>
 
                 <!-- Mobile Hamburger Menu Button -->
-                <button class="lg:hidden text-white text-lg bg-transparent border-0 p-1 focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavbar" aria-controls="mobileNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" onclick="toggleMobileMenu()" class="lg:hidden text-white text-lg bg-transparent border-0 p-1 focus:outline-none cursor-pointer">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Collapsible Navbar -->
-        <div class="collapse lg:hidden mt-2" id="mobileNavbar">
+        <div id="mobileMenu" class="hidden lg:hidden mt-2">
             <div class="bg-navyCard/95 backdrop-blur-lg border border-slate-700 rounded-2xl p-4 shadow-2xl flex flex-col space-y-3 text-xs font-medium text-slate-300">
-                <a href="#home" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Home</a>
-                <a href="#why-choose-us" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Why Us</a>
-                <a href="#ability" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Ability</a>
-                <a href="#countries" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Countries</a>
-                <a href="#services" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Services</a>
-                <button onclick="openBookingModal(); document.getElementById('mobileNavbar').classList.remove('show');" class="text-left hover:text-white transition py-1 border-b border-slate-800 bg-transparent border-0 p-0 text-slate-300 text-xs">Book & Apply</button>
-                <a href="#testimonials" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Testimonials</a>
-                <a href="#about" class="hover:text-white transition py-1 border-b border-slate-800" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">About</a>
-                <a href="#contact" class="hover:text-white transition py-1" data-bs-toggle="collapse" data-bs-target="#mobileNavbar">Contact</a>
+                <a href="#home" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Home</a>
+                <a href="#why-choose-us" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Why Us</a>
+                <a href="#ability" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Ability</a>
+                <a href="#countries" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Countries</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Services</a>
+                <button type="button" onclick="openBookingModal(); toggleMobileMenu();" class="text-left hover:text-white transition py-1 border-b border-slate-800 bg-transparent border-0 p-0 text-slate-300 text-xs cursor-pointer">Book & Apply</button>
+                <a href="#testimonials" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">Testimonials</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-white transition py-1 border-b border-slate-800">About</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-white transition py-1">Contact</a>
             </div>
         </div>
     </header>
@@ -331,7 +329,7 @@
             </p>
 
             <div class="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-                <button onclick="openBookingModal()" class="inline-block bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-6 sm:px-7 py-3 rounded-full shadow-xl hover:shadow-crimsonRed/50 transition-all duration-300 hover:scale-105 cursor-pointer">
+                <button type="button" onclick="openBookingModal()" class="inline-block bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-6 sm:px-7 py-3 rounded-full shadow-xl hover:shadow-crimsonRed/50 transition-all duration-300 hover:scale-105 cursor-pointer">
                     Book Appointment & Apply
                 </button>
                 <a href="#countries" class="inline-block bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs font-bold uppercase tracking-wider px-6 sm:px-7 py-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105">
@@ -410,7 +408,7 @@
                 </p>
                
                 <div class="flex flex-wrap items-center gap-3 pt-2">
-                    <button onclick="openBookingModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/30 cursor-pointer">Book Appointment</button>
+                    <button type="button" onclick="openBookingModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/30 cursor-pointer">Book Appointment</button>
                     <a href="https://wa.me/916280655183" target="_blank" class="flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 group">
                         <i class="fa-brands fa-whatsapp text-lg group-hover:rotate-12 transition-transform duration-300"></i> Direct WhatsApp
                     </a>
@@ -434,7 +432,7 @@
 
             <div class="flex flex-wrap justify-center gap-3 sm:gap-6 pt-6 sm:pt-8">
                 <!-- Singapore -->
-                <button onclick="switchCountry('singapore')" id="tab-singapore" class="flag-card bg-white border-2 border-crimsonRed p-3 sm:p-4 rounded-2xl shadow-xl w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                <button type="button" onclick="switchCountry('singapore')" id="tab-singapore" class="flag-card bg-white border-2 border-crimsonRed p-3 sm:p-4 rounded-2xl shadow-xl w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
                         <img src="https://flagcdn.com/w80/sg.png" alt="Singapore Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
@@ -442,7 +440,7 @@
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
                 </button>
                 <!-- Mauritius -->
-                <button onclick="switchCountry('mauritius')" id="tab-mauritius" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                <button type="button" onclick="switchCountry('mauritius')" id="tab-mauritius" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
                         <img src="https://flagcdn.com/w80/mu.png" alt="Mauritius Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
@@ -450,7 +448,7 @@
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
                 </button>
                 <!-- UK -->
-                <button onclick="switchCountry('uk')" id="tab-uk" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                <button type="button" onclick="switchCountry('uk')" id="tab-uk" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
                         <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
@@ -458,7 +456,7 @@
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
                 </button>
                 <!-- Dubai -->
-                <button onclick="switchCountry('dubai')" id="tab-dubai" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                <button type="button" onclick="switchCountry('dubai')" id="tab-dubai" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
                         <img src="https://flagcdn.com/w80/ae.png" alt="Dubai Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
@@ -466,7 +464,7 @@
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
                 </button>
                 <!-- Europe -->
-                <button onclick="switchCountry('europe')" id="tab-europe" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                <button type="button" onclick="switchCountry('europe')" id="tab-europe" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
                         <img src="https://flagcdn.com/w80/eu.png" alt="Europe Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
@@ -492,7 +490,7 @@
                         <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> Transparent Guidance</div>
                     </div>
                     <div class="pt-2">
-                        <button onclick="openBookingModal()" class="inline-flex items-center gap-2 bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-extrabold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/30 uppercase tracking-wider cursor-pointer">
+                        <button type="button" onclick="openBookingModal()" class="inline-flex items-center gap-2 bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-extrabold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-crimsonRed/30 uppercase tracking-wider cursor-pointer">
                             <span>Book & Apply Now</span> <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </div>
@@ -531,7 +529,7 @@
                         <h3 class="text-base sm:text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Study Visa Guidance</h3>
                         <p class="text-xs text-slate-400 leading-relaxed">Admissions assistance, SOP preparation, academic mapping, and visa file filing.</p>
                     </div>
-                    <button onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
+                    <button type="button" onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
                 </div>
                 <!-- Service 2 -->
                 <div class="interactive-card bg-navyCard border border-navyBorder rounded-2xl p-5 sm:p-6 flex flex-col justify-between group">
@@ -543,7 +541,7 @@
                         <h3 class="text-base sm:text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Visitor & Family Visa</h3>
                         <p class="text-xs text-slate-400 leading-relaxed">Assistance with family invitation letters, home ties documentation, and financial files.</p>
                     </div>
-                    <button onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
+                    <button type="button" onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
                 </div>
                 <!-- Service 3 -->
                 <div class="interactive-card bg-navyCard border border-navyBorder rounded-2xl p-5 sm:p-6 flex flex-col justify-between group">
@@ -555,7 +553,7 @@
                         <h3 class="text-base sm:text-lg font-extrabold text-white group-hover:text-crimsonRed transition-colors">Tourist Visa Services</h3>
                         <p class="text-xs text-slate-400 leading-relaxed">Itinerary planning, travel hotel booking proofs, cover notes, and appointment support.</p>
                     </div>
-                    <button onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
+                    <button type="button" onclick="openBookingModal()" class="mt-6 w-full bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-crimsonRed/40 cursor-pointer">Apply For Guidance</button>
                 </div>
             </div>
         </div>
@@ -739,7 +737,7 @@
                         <li><a href="#ability" class="hover:text-white transition">Tailored Ability</a></li>
                         <li><a href="#countries" class="hover:text-white transition">Destinations</a></li>
                         <li><a href="#services" class="hover:text-white transition">Visa Services</a></li>
-                        <li><button onclick="openBookingModal()" class="hover:text-white transition bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs text-left">Book Appointment</button></li>
+                        <li><button type="button" onclick="openBookingModal()" class="hover:text-white transition bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs text-left">Book Appointment</button></li>
                         <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
                     </ul>
                 </div>
@@ -747,9 +745,9 @@
                 <div class="space-y-2.5 sm:space-y-3">
                     <p class="text-white font-extrabold uppercase tracking-wider text-xs">Legal & Compliance</p>
                     <ul class="space-y-2 text-slate-400">
-                        <li><button onclick="openModal('privacy')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-shield-halved text-[10px] text-crimsonRed"></i> Privacy Policy</button></li>
-                        <li><button onclick="openModal('terms')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-file-contract text-[10px] text-crimsonRed"></i> Terms & Conditions</button></li>
-                        <li><button onclick="openModal('disclaimer')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-triangle-exclamation text-[10px] text-crimsonRed"></i> Immigration Disclaimer</button></li>
+                        <li><button type="button" onclick="openModal('privacy')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-shield-halved text-[10px] text-crimsonRed"></i> Privacy Policy</button></li>
+                        <li><button type="button" onclick="openModal('terms')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-file-contract text-[10px] text-crimsonRed"></i> Terms & Conditions</button></li>
+                        <li><button type="button" onclick="openModal('disclaimer')" class="hover:text-white transition flex items-center gap-1.5 text-left bg-transparent border-0 p-0 text-slate-400 cursor-pointer text-xs"><i class="fa-solid fa-triangle-exclamation text-[10px] text-crimsonRed"></i> Immigration Disclaimer</button></li>
                     </ul>
                 </div>
 
@@ -773,19 +771,16 @@
     <!-- INTERACTIVE MODAL POPUP CONTAINER -->
     <div id="policyModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
         <div class="bg-navyCard border border-slate-700 w-full max-w-lg rounded-3xl p-6 sm:p-8 text-white relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center cursor-pointer">
+            <button type="button" onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center cursor-pointer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <h3 id="modalTitle" class="text-lg font-black uppercase text-crimsonRed tracking-wide"></h3>
             <div id="modalBody" class="text-xs text-slate-300 leading-relaxed space-y-3 max-h-[60vh] overflow-y-auto pr-2 mt-3"></div>
             <div class="pt-4 text-right">
-                <button onclick="closeModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold px-6 py-2.5 rounded-full uppercase tracking-wider transition-all cursor-pointer">Close</button>
+                <button type="button" onclick="closeModal()" class="bg-crimsonRed hover:bg-crimsonHover text-white text-xs font-bold px-6 py-2.5 rounded-full uppercase tracking-wider transition-all cursor-pointer">Close</button>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- INTERACTIVE SCRIPTS -->
     <script>
@@ -802,6 +797,11 @@
         }
         window.addEventListener("scroll", revealOnScroll);
         revealOnScroll();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
 
         const countryData = {
             singapore: {
