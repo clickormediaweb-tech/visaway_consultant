@@ -957,23 +957,53 @@
                 closeBookingModal();
             }
         }
-        // Contact Form Submit Handler
+        /// Apni Google Apps Script ka naya Web App URL yahan daalein
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwPy80e41yGWHicOuZlZ-S2bvk5vNDQErRQUx-fpqEywWxO5ifzvIW7jX06KkcKk2lI/exec';
+
+// 1. Quick Lead / Contact Form Handler
 function handleSubmit(e) {
     e.preventDefault();
     const inputField = e.target.querySelector('input');
     const userValue = inputField.value;
 
-    // Aapka Google Apps Script Web App URL yahan daalna hai
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxQTiZtmSJHnBhqpd7RJXWcwHcqJryYRZk1ufieYpHBSet-34UZEjMhhbI5YKZb1WvS/exec';
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            userinput: userValue, 
+            formType: 'Quick Contact / Lead' 
+        })
+    })
+    .then(() => {
+        alert('Thank you! Visaway Consultant Services will reach out shortly.');
+        e.target.reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert('Something went wrong. Please try again.');
+    });
+}
+
+// 2. Review / Testimonial Form Handler
+function handleReviewSubmit(e) {
+    e.preventDefault();
+    const inputs = e.target.querySelectorAll('input, textarea');
+    const reviewerName = inputs[0].value;
+    const reviewText = inputs[1].value;
 
     fetch(scriptURL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userinput: userValue, formType: 'Contact / Quick Lead' })
+        body: JSON.stringify({ 
+            reviewerName: reviewerName, 
+            reviewText: reviewText, 
+            formType: 'Client Review' 
+        })
     })
     .then(() => {
-        alert('Thank you! Your details have been saved successfully.');
+        alert('Thank you for sharing your review! Your testimonial has been successfully submitted.');
         e.target.reset();
     })
     .catch(error => {
