@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -434,7 +433,7 @@
                 <!-- Singapore -->
                 <button type="button" onclick="switchCountry('singapore')" id="tab-singapore" class="flag-card bg-white border-2 border-crimsonRed p-3 sm:p-4 rounded-2xl shadow-xl w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
                     <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w160/ca.png" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                        <img src="https://flagcdn.com/w160/sg.png" alt="Singapore Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
                     <span class="text-[11px] sm:text-xs font-black text-navyDark uppercase mt-2.5 sm:mt-3 block tracking-wide">Singapore</span>
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
@@ -495,25 +494,28 @@
                         </button>
                     </div>
                 </div>
-          <div class="flex justify-center items-center relative z-10">
-    <div class="w-full sm:w-72 rounded-3xl bg-slate-900 border border-slate-800 p-4 shadow-2xl relative overflow-hidden group space-y-2.5">
-        <div class="absolute inset-0 bg-gradient-to-tr from-crimsonRed/30 via-transparent to-orange-500/20 animate-spin-slow pointer-events-none"></div>
-        
-        <!-- DO ATTRACTIVE IMAGES CONTAINER -->
-        <div class="grid grid-cols-2 gap-2 relative z-10">
-            <div class="overflow-hidden rounded-xl border border-white/20 shadow-lg group-hover:scale-105 transition duration-300">
-                <img id="country-img-1" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800" alt="Famous Landmark 1" class="w-full h-24 sm:h-28 object-cover">
-            </div>
-            <div class="overflow-hidden rounded-xl border border-white/20 shadow-lg group-hover:scale-105 transition duration-300">
-                <img id="country-img-2" src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800" alt="Famous Landmark 2" class="w-full h-24 sm:h-28 object-cover">
-            </div>
-        </div>
+                
+                <!-- TWO ATTRACTIVE IMAGES DISPLAY -->
+                <div class="flex justify-center items-center relative z-10">
+                    <div class="w-full sm:w-72 rounded-3xl bg-slate-900 border border-slate-800 p-4 shadow-2xl relative overflow-hidden group space-y-2.5">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-crimsonRed/30 via-transparent to-orange-500/20 animate-spin-slow pointer-events-none"></div>
+                        
+                        <div class="grid grid-cols-2 gap-2 relative z-10">
+                            <div class="overflow-hidden rounded-xl border border-white/20 shadow-lg group-hover:scale-105 transition duration-300">
+                                <img id="country-img-1" src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800" alt="Famous Landmark 1" class="w-full h-24 sm:h-28 object-cover">
+                            </div>
+                            <div class="overflow-hidden rounded-xl border border-white/20 shadow-lg group-hover:scale-105 transition duration-300">
+                                <img id="country-img-2" src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800" alt="Famous Landmark 2" class="w-full h-24 sm:h-28 object-cover">
+                            </div>
+                        </div>
 
-        <div class="text-center relative z-10 pt-1">
-            <span id="country-badge-text" class="text-[9px] sm:text-[10px] font-extrabold text-slate-300 uppercase tracking-widest bg-slate-800/90 px-3 py-1 rounded-full border border-slate-700 inline-block shadow-md">Marina Bay & Gardens by the Bay</span>
+                        <div class="text-center relative z-10 pt-1">
+                            <span id="country-badge-text" class="text-[9px] sm:text-[10px] font-extrabold text-slate-300 uppercase tracking-widest bg-slate-800/90 px-3 py-1 rounded-full border border-slate-700 inline-block shadow-md">Marina Bay & Gardens by the Bay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>        </div>
     </section>
 
 
@@ -811,46 +813,44 @@
             menu.classList.toggle('hidden');
         }
 
-        
-                document.getElementById('country-desc').innerText = data.desc;
-                const countryData = {
+        const countryData = {
             singapore: {
                 title: "SINGAPORE",
                 desc: "Leading business and educational hub offering efficient tourist and study pathways with structured documentation.",
-                img1: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800", // Marina Bay Sands
-                img2: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800", // Gardens by the Bay
+                img1: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800",
                 badgeText: "Marina Bay & Gardens by the Bay",
                 features: ["Student Passes", "Tourist Visas", "Fast Processing", "Transparent Guidance"]
             },
             mauritius: {
                 title: "MAURITIUS",
                 desc: "Serene island destination popular for professional training, higher education study programs, and leisure travel.",
-                img1: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800", // Le Morne beach
-                img2: "https://images.unsplash.com/photo-1578593139886-74347714d7a8?q=80&w=800", // Crystal water Mauritius
+                img1: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1578593139886-74347714d7a8?q=80&w=800",
                 badgeText: "Le Morne & Crystal Beaches",
                 features: ["Study Programs", "Tourist Visas", "Accommodation Support", "Financial Documentation"]
             },
             uk: {
                 title: "UNITED KINGDOM",
                 desc: "Fast-track processing for university study visas and family visitor visas across England, Scotland, and Wales.",
-                img1: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800", // Big Ben London
-                img2: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=800", // London Eye / Bridge
+                img1: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=800",
                 badgeText: "Big Ben & London Skyline",
                 features: ["Quick CAS Evaluation", "Family Invitation File", "Tourist Itinerary Prep", "Financial Documentation"]
             },
             dubai: {
                 title: "DUBAI (UAE)",
                 desc: "Hassle-free 30-day and 60-day tourist visa processing with fast turnaround times.",
-                img1: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800", // Burj Khalifa
-                img2: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=800", // Dubai Marina
+                img1: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=800",
                 badgeText: "Burj Khalifa & Luxury Skylines",
                 features: ["30 & 60 Day Visas", "Express Processing", "Voucher Booking", "Minimal Documentation"]
             },
             europe: {
                 title: "EUROPE (SCHENGEN)",
                 desc: "Explore multiple Schengen countries with expert itinerary planning, cover notes, and appointment support.",
-                img1: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800", // Eiffel Tower Paris
-                img2: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800", // Venice canals Italy
+                img1: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800",
                 badgeText: "Paris Eiffel Tower & Venice Canals",
                 features: ["Schengen Tourist Visa", "Travel Itinerary Prep", "Hotel & Flight Proofs", "Embassy Appointment Help"]
             }
@@ -883,59 +883,6 @@
             activeTab.classList.remove('border-slate-200');
             activeTab.classList.add('border-2', 'border-crimsonRed');
         }
-        function switchCountry(countryKey) {
-            const data = countryData[countryKey];
-            const showcaseCard = document.getElementById('country-display-card');
-            showcaseCard.classList.add('opacity-40', 'scale-[0.97]');
-
-            setTimeout(() => {
-                document.getElementById('country-title').innerText = data.title;
-                document.getElementById('country-desc').innerText = data.desc;
-                document.getElementById('country-img-1').src = data.img1;
-                document.getElementById('country-img-2').src = data.img2;
-                document.getElementById('country-badge-text').innerText = data.badgeText;
-
-                const featureContainer = document.getElementById('country-features');
-                featureContainer.innerHTML = data.features.map(f => `<div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> ${f}</div>`).join('');
-
-                showcaseCard.classList.remove('opacity-40', 'scale-[0.97]');
-            }, 200);
-
-            document.querySelectorAll('.flag-card').forEach(tab => {
-                tab.classList.remove('border-2', 'border-crimsonRed');
-                tab.classList.add('border', 'border-slate-200');
-            });
-
-            const activeTab = document.getElementById(`tab-${countryKey}`);
-            activeTab.classList.remove('border-slate-200');
-            activeTab.classList.add('border-2', 'border-crimsonRed');
-        }
-        function switchCountry(countryKey) {
-            const data = countryData[countryKey];
-            const showcaseCard = document.getElementById('country-display-card');
-            showcaseCard.classList.add('opacity-40', 'scale-[0.97]');
-
-            setTimeout(() => {
-                document.getElementById('country-title').innerText = data.title;
-                document.getElementById('country-desc').innerText = data.desc;
-                document.getElementById('country-flag-large').src = data.flagImg;
-                document.getElementById('country-badge-text').innerText = data.badgeText;
-
-                const featureContainer = document.getElementById('country-features');
-                featureContainer.innerHTML = data.features.map(f => `<div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed text-xs"></i> ${f}</div>`).join('');
-
-                showcaseCard.classList.remove('opacity-40', 'scale-[0.97]');
-            }, 200);
-
-            document.querySelectorAll('.flag-card').forEach(tab => {
-                tab.classList.remove('border-2', 'border-crimsonRed');
-                tab.classList.add('border', 'border-slate-200');
-            });
-
-            const activeTab = document.getElementById(`tab-${countryKey}`);
-            activeTab.classList.remove('border-slate-200');
-            activeTab.classList.add('border-2', 'border-crimsonRed');
-        }
 
         function closeWelcomeModal() {
             const modal = document.getElementById('welcomeModal');
@@ -950,25 +897,6 @@
         function closeBookingModal() {
             const modal = document.getElementById('bookingModal');
             modal.classList.add('hidden');
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('Thank you! Visaway Consultant Services will reach out shortly.');
-            e.target.reset();
-        }
-
-        function handleOnlineBooking(e) {
-            e.preventDefault();
-            alert('Appointment booked and application enquiry submitted successfully! Our team at Visaway Consultant Group will review your details and contact you shortly.');
-            e.target.reset();
-            closeBookingModal();
-        }
-
-        function handleReviewSubmit(e) {
-            e.preventDefault();
-            alert('Thank you for sharing your review! Your testimonial has been successfully submitted.');
-            e.target.reset();
         }
 
         const policyContent = {
@@ -1026,60 +954,91 @@
                 closeBookingModal();
             }
         }
-        /// Apni Google Apps Script ka naya Web App URL yahan daalein
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwPy80e41yGWHicOuZlZ-S2bvk5vNDQErRQUx-fpqEywWxO5ifzvIW7jX06KkcKk2lI/exec';
 
-// 1. Quick Lead / Contact Form Handler
-function handleSubmit(e) {
-    e.preventDefault();
-    const inputField = e.target.querySelector('input');
-    const userValue = inputField.value;
+        // Google Sheet Backend Integration
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwPy80e41yGWHicOuZlZ-S2bvk5vNDQErRQUx-fpqEywWxO5ifzvIW7jX06KkcKk2lI/exec';
 
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            userinput: userValue, 
-            formType: 'Quick Contact / Lead' 
-        })
-    })
-    .then(() => {
-        alert('Thank you! Visaway Consultant Services will reach out shortly.');
-        e.target.reset();
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert('Something went wrong. Please try again.');
-    });
-}
+        function handleSubmit(e) {
+            e.preventDefault();
+            const inputField = e.target.querySelector('input');
+            const userValue = inputField.value;
 
-// 2. Review / Testimonial Form Handler
-function handleReviewSubmit(e) {
-    e.preventDefault();
-    const inputs = e.target.querySelectorAll('input, textarea');
-    const reviewerName = inputs[0].value;
-    const reviewText = inputs[1].value;
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    userinput: userValue, 
+                    formType: 'Quick Contact / Lead' 
+                })
+            })
+            .then(() => {
+                alert('Thank you! Visaway Consultant Services will reach out shortly.');
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Something went wrong. Please try again.');
+            });
+        }
 
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            reviewerName: reviewerName, 
-            reviewText: reviewText, 
-            formType: 'Client Review' 
-        })
-    })
-    .then(() => {
-        alert('Thank you for sharing your review! Your testimonial has been successfully submitted.');
-        e.target.reset();
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
-        alert('Something went wrong. Please try again.');
-    });
-}
+        function handleOnlineBooking(e) {
+            e.preventDefault();
+            const inputs = e.target.querySelectorAll('input, select, textarea');
+            const bookingData = {
+                name: inputs[0].value,
+                phone: inputs[1].value,
+                email: inputs[2].value,
+                destination: inputs[3].value,
+                visaCategory: inputs[4].value,
+                date: inputs[5].value,
+                timeSlot: inputs[6].value,
+                details: inputs[7].value,
+                formType: 'Online Booking & Application'
+            };
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(bookingData)
+            })
+            .then(() => {
+                alert('Appointment booked and application enquiry submitted successfully! Our team will contact you shortly.');
+                e.target.reset();
+                closeBookingModal();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Something went wrong. Please try again.');
+            });
+        }
+
+        function handleReviewSubmit(e) {
+            e.preventDefault();
+            const inputs = e.target.querySelectorAll('input, textarea');
+            const reviewerName = inputs[0].value;
+            const reviewText = inputs[1].value;
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    reviewerName: reviewerName, 
+                    reviewText: reviewText, 
+                    formType: 'Client Review' 
+                })
+            })
+            .then(() => {
+                alert('Thank you for sharing your review! Your testimonial has been successfully submitted.');
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Something went wrong. Please try again.');
+            });
+        }
     </script>
 </body>
 </html>
