@@ -957,6 +957,30 @@
                 closeBookingModal();
             }
         }
+        // Contact Form Submit Handler
+function handleSubmit(e) {
+    e.preventDefault();
+    const inputField = e.target.querySelector('input');
+    const userValue = inputField.value;
+
+    // Aapka Google Apps Script Web App URL yahan daalna hai
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzB_hSaQUo96NzUYm_i2xg2zvzc3mXUvzGO97kkYOoIt9kGnv51nAOf2kI4Ajnyx2kY/exec';
+
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userinput: userValue, formType: 'Contact / Quick Lead' })
+    })
+    .then(() => {
+        alert('Thank you! Your details have been saved successfully.');
+        e.target.reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert('Something went wrong. Please try again.');
+    });
+}
     </script>
 </body>
 </html>
