@@ -433,81 +433,87 @@
             <h2 class="text-2xl sm:text-4xl font-black uppercase text-navyDark tracking-tight">Which Country?</h2>
             <p class="text-slate-500 text-xs max-w-lg mx-auto">Click any destination below to inspect visa paths and interactive criteria.</p>
 
-<div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-3 pt-6 sm:pt-8 max-w-5xl mx-auto">
-    <!-- Saare 9 country buttons yahan honge -->
-</div>                <!-- Singapore -->
-                <button type="button" onclick="switchCountry('singapore')" id="tab-singapore" class="flag-card bg-white border-2 border-crimsonRed p-3 sm:p-4 rounded-2xl shadow-xl w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w160/sg.png" alt="Singapore Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-navyDark uppercase mt-2.5 sm:mt-3 block tracking-wide">Singapore</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- Mauritius -->
-                <button type="button" onclick="switchCountry('mauritius')" id="tab-mauritius" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/mu.png" alt="Mauritius Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Mauritius</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- UK -->
-                <button type="button" onclick="switchCountry('uk')" id="tab-uk" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">UK</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- Dubai -->
-                <button type="button" onclick="switchCountry('dubai')" id="tab-dubai" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/ae.png" alt="Dubai Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Dubai</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- Europe -->
-                <button type="button" onclick="switchCountry('europe')" id="tab-europe" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/eu.png" alt="Europe Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Europe</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- Australia -->
-                <button type="button" onclick="switchCountry('australia')" id="tab-australia" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Australia</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- New Zealand -->
-                <button type="button" onclick="switchCountry('newzealand')" id="tab-newzealand" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">New Zealand</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- Canada -->
-                <button type="button" onclick="switchCountry('canada')" id="tab-canada" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Canada</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
-                <!-- USA -->
-                <button type="button" onclick="switchCountry('usa')" id="tab-usa" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
-                        <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
-                    </div>
-                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">USA</span>
-                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
-                </button>
+<div class="space-y-4 pt-6 sm:pt-8 max-w-4xl mx-auto flex flex-col items-center">
+    <!-- Pehli Row: 5 Cards -->
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-5">
+        <!-- Singapore -->
+        <button type="button" onclick="switchCountry('singapore')" id="tab-singapore" class="flag-card bg-white border-2 border-crimsonRed p-3 sm:p-4 rounded-2xl shadow-xl w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w160/sg.png" alt="Singapore Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
             </div>
+            <span class="text-[11px] sm:text-xs font-black text-navyDark uppercase mt-2.5 sm:mt-3 block tracking-wide">Singapore</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- Mauritius -->
+        <button type="button" onclick="switchCountry('mauritius')" id="tab-mauritius" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/mu.png" alt="Mauritius Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Mauritius</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- UK -->
+        <button type="button" onclick="switchCountry('uk')" id="tab-uk" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">UK</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- Dubai -->
+        <button type="button" onclick="switchCountry('dubai')" id="tab-dubai" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/ae.png" alt="Dubai Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Dubai</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- Europe -->
+        <button type="button" onclick="switchCountry('europe')" id="tab-europe" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/eu.png" alt="Europe Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Europe</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+    </div>
+
+    <!-- Doosri Row: 4 Cards -->
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-5">
+        <!-- Australia -->
+        <button type="button" onclick="switchCountry('australia')" id="tab-australia" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Australia</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- New Zealand -->
+        <button type="button" onclick="switchCountry('newzealand')" id="tab-newzealand" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">New Zealand</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- Canada -->
+        <button type="button" onclick="switchCountry('canada')" id="tab-canada" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Canada</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+        <!-- USA -->
+        <button type="button" onclick="switchCountry('usa')" id="tab-usa" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+            </div>
+            <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">USA</span>
+            <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+        </button>
+    </div>
+</div>
 
             <!-- MAIN DISPLAY CARD -->
             <div id="country-display-card" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 mt-8 sm:mt-10 shadow-2xl max-w-3xl mx-auto text-left grid md:grid-cols-2 gap-6 sm:gap-8 items-center transition-all duration-500 relative overflow-hidden">
@@ -911,8 +917,8 @@
             canada: {
                 title: "CANADA",
                 desc: "Top destination for international students and visitors offering structured immigration pathways.",
-                img1: "https://images.unsplash.com/photo-1503614472348-731f3f4d778d?q=80&w=800",
-                img2: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=800",
+                img1: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1503614472348-731f3f4d778d?q=80&w=800",
                 badgeText: "Toronto Skyline & Rockies",
                 features: ["Study Permits", "Visitor Visas", "Express Entry Support", "Transparent Filing"]
             },
