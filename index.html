@@ -180,6 +180,10 @@
                             <option value="UK">United Kingdom (UK)</option>
                             <option value="Dubai">Dubai (UAE)</option>
                             <option value="Europe">Europe (Schengen)</option>
+                            <option value="Australia">Australia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Canada">Canada</option>
+                            <option value="USA">USA</option>
                         </select>
                     </div>
                 </div>
@@ -253,14 +257,14 @@
         <div class="bg-navyDark/95 backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 flex items-center justify-between shadow-2xl">
            
             <a href="#home" class="flex items-center gap-2.5 group">
-    <div class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg overflow-hidden border-2 border-crimsonRed p-0.5">
-        <img src="WhatsApp Image 2026-09-23 at 10.46.18 AM.jpeg" alt="Visaway Logo" class="w-full h-full object-cover rounded-full">
-    </div>
-    <div class="text-left leading-tight">
-        <span class="block text-xs sm:text-sm font-black tracking-tight text-white group-hover:text-crimsonRed transition">VISAWAY</span>
-        <span class="block text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-300 uppercase -mt-0.5">Consultant</span>
-    </div>
-</a>
+                <div class="w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg overflow-hidden border-2 border-crimsonRed p-0.5">
+                    <img src="WhatsApp Image 2026-09-23 at 10.46.18 AM.jpeg" alt="Visaway Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="text-left leading-tight">
+                    <span class="block text-xs sm:text-sm font-black tracking-tight text-white group-hover:text-crimsonRed transition">VISAWAY</span>
+                    <span class="block text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-300 uppercase -mt-0.5">Consultant</span>
+                </div>
+            </a>
 
             <!-- Desktop Nav Links -->
             <div class="hidden lg:flex items-center gap-4 text-xs font-medium text-slate-300">
@@ -468,6 +472,38 @@
                         <img src="https://flagcdn.com/w80/eu.png" alt="Europe Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
                     </div>
                     <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Europe</span>
+                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- Australia -->
+                <button type="button" onclick="switchCountry('australia')" id="tab-australia" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Australia</span>
+                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- New Zealand -->
+                <button type="button" onclick="switchCountry('newzealand')" id="tab-newzealand" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">New Zealand</span>
+                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- Canada -->
+                <button type="button" onclick="switchCountry('canada')" id="tab-canada" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">Canada</span>
+                    <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
+                </button>
+                <!-- USA -->
+                <button type="button" onclick="switchCountry('usa')" id="tab-usa" class="flag-card bg-white border border-slate-200 p-3 sm:p-4 rounded-2xl shadow-md hover:border-crimsonRed w-28 sm:w-32 text-center transition-all duration-300 relative group cursor-pointer">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto relative flex items-center justify-center">
+                        <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="flag-img w-12 h-12 sm:w-14 sm:h-14 object-cover rounded-full shadow-lg border-2 border-white">
+                    </div>
+                    <span class="text-[11px] sm:text-xs font-black text-slate-700 uppercase mt-2.5 sm:mt-3 block tracking-wide">USA</span>
                     <span class="text-[8px] sm:text-[9px] text-slate-400 block -mt-0.5">Explore Permits</span>
                 </button>
             </div>
@@ -725,11 +761,12 @@
                 <div class="space-y-4 md:col-span-1">
 
                     <div class="flex items-center gap-2.5">
-    <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg overflow-hidden border-2 border-crimsonRed p-0.5">
-        <img src="WhatsApp Image 2026-09-23 at 10.46.18 AM.jpeg" alt="Visaway Logo" class="w-full h-full object-cover rounded-full">
-    </div>
-    <span class="text-base font-black tracking-tight text-white uppercase">VISAWAY <span class="text-crimsonRed">CONSULTANT</span></span>
-</div><p class="text-slate-400 text-xs leading-relaxed">
+                        <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-white rounded-full shadow-lg overflow-hidden border-2 border-crimsonRed p-0.5">
+                            <img src="WhatsApp Image 2026-09-23 at 10.46.18 AM.jpeg" alt="Visaway Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="text-base font-black tracking-tight text-white uppercase">VISAWAY <span class="text-crimsonRed">CONSULTANT</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
                         Your trusted documentation partner based in Bathinda, Punjab, specialized in profile evaluation, study permits, and visitor visas.
                     </p>
                     <div class="flex items-center gap-3 text-slate-300 text-sm pt-1">
@@ -826,7 +863,7 @@
                 title: "MAURITIUS",
                 desc: "Serene island destination popular for professional training, higher education study programs, and leisure travel.",
                 img1: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800",
-                img2: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800", // Mauritius Beach view fix
+                img2: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800",
                 badgeText: "Le Morne & Crystal Beaches",
                 features: ["Study Programs", "Tourist Visas", "Accommodation Support", "Financial Documentation"]
             },
@@ -834,7 +871,7 @@
                 title: "UNITED KINGDOM",
                 desc: "Fast-track processing for university study visas and family visitor visas across England, Scotland, and Wales.",
                 img1: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800",
-                img2: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=800", // London Bridge fix
+                img2: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=800",
                 badgeText: "Big Ben & London Skyline",
                 features: ["Quick CAS Evaluation", "Family Invitation File", "Tourist Itinerary Prep", "Financial Documentation"]
             },
@@ -842,7 +879,7 @@
                 title: "DUBAI (UAE)",
                 desc: "Hassle-free 30-day and 60-day tourist visa processing with fast turnaround times.",
                 img1: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800",
-                img2: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=800", // Dubai cityscape fix
+                img2: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=800",
                 badgeText: "Burj Khalifa & Luxury Skylines",
                 features: ["30 & 60 Day Visas", "Express Processing", "Voucher Booking", "Minimal Documentation"]
             },
@@ -850,11 +887,44 @@
                 title: "EUROPE (SCHENGEN)",
                 desc: "Explore multiple Schengen countries with expert itinerary planning, cover notes, and appointment support.",
                 img1: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800",
-                img2: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=800", // Venice Italy fix
+                img2: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=800",
                 badgeText: "Paris Eiffel Tower & Venice Canals",
                 features: ["Schengen Tourist Visa", "Travel Itinerary Prep", "Hotel & Flight Proofs", "Embassy Appointment Help"]
+            },
+            australia: {
+                title: "AUSTRALIA",
+                desc: "World-class education and breathtaking landscapes offering premier study and visitor visa pathways.",
+                img1: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800",
+                badgeText: "Sydney Opera House & Harbour",
+                features: ["Study Permits", "Visitor Visas", "PR Pathways", "Document Guidance"]
+            },
+            newzealand: {
+                title: "NEW ZEALAND",
+                desc: "Experience pristine nature and top-tier academic institutions with our streamlined visa assistance.",
+                img1: "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800",
+                badgeText: "Scenic Landscapes & Universities",
+                features: ["Student Visas", "Tourist Visas", "Fast Processing", "SOP Support"]
+            },
+            canada: {
+                title: "CANADA",
+                desc: "Top destination for international students and visitors offering structured immigration pathways.",
+                img1: "https://images.unsplash.com/photo-1503614472348-731f3f4d778d?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=800",
+                badgeText: "Toronto Skyline & Rockies",
+                features: ["Study Permits", "Visitor Visas", "Express Entry Support", "Transparent Filing"]
+            },
+            usa: {
+                title: "USA",
+                desc: "Pursue world-famous education and explore iconic cities with professional visa documentation support.",
+                img1: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=800",
+                img2: "https://images.unsplash.com/photo-1534430480872-3498386e7856?q=80&w=800",
+                badgeText: "New York City & Campus Life",
+                features: ["F1 Student Visa", "B1/B2 Visitor Visa", "Interview Guidance", "Complete Support"]
             }
         };
+
         function switchCountry(countryKey) {
             const data = countryData[countryKey];
             const showcaseCard = document.getElementById('country-display-card');
